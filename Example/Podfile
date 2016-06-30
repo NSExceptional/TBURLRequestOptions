@@ -1,0 +1,6 @@
+use_frameworks!
+target 'TBURLRequestOptions_Tests' do
+  pod 'TBURLRequestOptions', :path => '../'
+  
+  
+end
