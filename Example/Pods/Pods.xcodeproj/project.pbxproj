@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24CB55518CADBDE44803A828FF3470F0 /* NSURLRequest+TBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C04B8586E21BA868B41B5FCC37FD1DD1 /* NSURLRequest+TBAdditions.m */; };
+		324A45684ED62F6A24182A107C3DB87B /* TBURLRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF29A74F663C719E5B4196218EE002F /* TBURLRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D0DEB622784B4645B8FFD78C4605FA0 /* TBURLRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE93CBDF2503DB913E59E1B37334CF12 /* TBURLRequestBuilder.m */; };
+		53065724AB22CCA43501C8AA17DA37B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE5DF0F0ED7D4270B2A668F61E0BCB /* Foundation.framework */; };
+		5B36279F36764E1D54E4B754428042E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE5DF0F0ED7D4270B2A668F61E0BCB /* Foundation.framework */; };
+		907F40C91D26FE20004B4151 /* NSString+Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 907F40BF1D26FE20004B4151 /* NSString+Networking.h */; };
+		907F40CA1D26FE20004B4151 /* NSString+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F40C01D26FE20004B4151 /* NSString+Networking.m */; };
+		907F40D31D26FE2D004B4151 /* NSArray+Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 907F40CB1D26FE2D004B4151 /* NSArray+Networking.h */; };
+		907F40D41D26FE2D004B4151 /* NSArray+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F40CC1D26FE2D004B4151 /* NSArray+Networking.m */; };
+		907F40D51D26FE2D004B4151 /* NSData+Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 907F40CD1D26FE2D004B4151 /* NSData+Networking.h */; };
+		907F40D61D26FE2D004B4151 /* NSData+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F40CE1D26FE2D004B4151 /* NSData+Networking.m */; };
+		907F40D71D26FE2D004B4151 /* NSDictionary+Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 907F40CF1D26FE2D004B4151 /* NSDictionary+Networking.h */; };
+		907F40D81D26FE2D004B4151 /* NSDictionary+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F40D01D26FE2D004B4151 /* NSDictionary+Networking.m */; };
+		BDEC184F7C3700D4678DCD8500B62BEE /* TBURLRequestOptions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E73F4C43DB85C4F453C0E8F7F917F0 /* TBURLRequestOptions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3A671353C5A228C22617E9A040E63F7 /* NSURLRequest+TBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 584FFF70DAF53162853D8F5BD9052A71 /* NSURLRequest+TBAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6C0C4F7D057AA1FB0F2C5AD3BC29004 /* Pods-TBURLRequestOptions_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC555A1DA0F40225406BB531DB7634 /* Pods-TBURLRequestOptions_Tests-dummy.m */; };
+		D52A5CA90BF63E50C4FA300CAB95A406 /* TBURLRequestOptions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D691632F80D0725309C3869A62B7547D /* TBURLRequestOptions-dummy.m */; };
+		E032E60676671AD218D64AF46AD2E2BD /* Pods-TBURLRequestOptions_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A94F26CF62EEFFE1BE89D54057F42A9 /* Pods-TBURLRequestOptions_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E2CD425D536039B4CD5968558DC3F93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96496862A168E0EF2257AC6CA6DCF398;
+			remoteInfo = TBURLRequestOptions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		017353B7724F73F98414F5C7CA817907 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C9EE2DF0B36850D11B7D8432FE289ED /* Pods_TBURLRequestOptions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBURLRequestOptions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF29A74F663C719E5B4196218EE002F /* TBURLRequestBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TBURLRequestBuilder.h; sourceTree = "<group>"; };
+		3ABC555A1DA0F40225406BB531DB7634 /* Pods-TBURLRequestOptions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TBURLRequestOptions_Tests-dummy.m"; sourceTree = "<group>"; };
+		4D14274378748D2BFC1FB3DA6DEF6CB7 /* TBURLRequestOptions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TBURLRequestOptions.modulemap; sourceTree = "<group>"; };
+		4FBA85ACD1F2468CF686920A1D6CE946 /* Pods-TBURLRequestOptions_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TBURLRequestOptions_Tests.modulemap"; sourceTree = "<group>"; };
+		584FFF70DAF53162853D8F5BD9052A71 /* NSURLRequest+TBAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+TBAdditions.h"; sourceTree = "<group>"; };
+		6159766F6F4EF91B0E763D24A3B01466 /* TBURLRequestOptions-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TBURLRequestOptions-Private.xcconfig"; sourceTree = "<group>"; };
+		69BE5DF0F0ED7D4270B2A668F61E0BCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6A94F26CF62EEFFE1BE89D54057F42A9 /* Pods-TBURLRequestOptions_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TBURLRequestOptions_Tests-umbrella.h"; sourceTree = "<group>"; };
+		78E73F4C43DB85C4F453C0E8F7F917F0 /* TBURLRequestOptions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TBURLRequestOptions-umbrella.h"; sourceTree = "<group>"; };
+		7BEEE78C132E054A0FD35DA229A5B0C7 /* TBURLRequestOptions.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TBURLRequestOptions.xcconfig; sourceTree = "<group>"; };
+		84BD349D0F3E53D1640DAB0C4FE86780 /* Pods-TBURLRequestOptions_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TBURLRequestOptions_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		907F40BF1D26FE20004B4151 /* NSString+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Networking.h"; sourceTree = "<group>"; };
+		907F40C01D26FE20004B4151 /* NSString+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Networking.m"; sourceTree = "<group>"; };
+		907F40CB1D26FE2D004B4151 /* NSArray+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Networking.h"; sourceTree = "<group>"; };
+		907F40CC1D26FE2D004B4151 /* NSArray+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Networking.m"; sourceTree = "<group>"; };
+		907F40CD1D26FE2D004B4151 /* NSData+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Networking.h"; sourceTree = "<group>"; };
+		907F40CE1D26FE2D004B4151 /* NSData+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Networking.m"; sourceTree = "<group>"; };
+		907F40CF1D26FE2D004B4151 /* NSDictionary+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Networking.h"; sourceTree = "<group>"; };
+		907F40D01D26FE2D004B4151 /* NSDictionary+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Networking.m"; sourceTree = "<group>"; };
+		9DA94DCE06E160882B455486797E1E12 /* TBURLRequestOptions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TBURLRequestOptions-prefix.pch"; sourceTree = "<group>"; };
+		AB84D22491879B2CD988871831E4DBE5 /* Pods-TBURLRequestOptions_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TBURLRequestOptions_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AE93CBDF2503DB913E59E1B37334CF12 /* TBURLRequestBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TBURLRequestBuilder.m; sourceTree = "<group>"; };
+		B415EEEB63F4B0050C5893A74F142913 /* Pods-TBURLRequestOptions_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TBURLRequestOptions_Tests-resources.sh"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C04B8586E21BA868B41B5FCC37FD1DD1 /* NSURLRequest+TBAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+TBAdditions.m"; sourceTree = "<group>"; };
+		C579026CA78135D9245E342266CCA74C /* Pods-TBURLRequestOptions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TBURLRequestOptions_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D691632F80D0725309C3869A62B7547D /* TBURLRequestOptions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TBURLRequestOptions-dummy.m"; sourceTree = "<group>"; };
+		D769EABA2A32B03BB8B64B9425A86A8F /* TBURLRequestOptions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TBURLRequestOptions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA743E71D28BA0172063D312E5064971 /* Pods-TBURLRequestOptions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TBURLRequestOptions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F368F07BF9326BDF5ABFDCC01B6C2C53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3F36B40636761E7E53D41AE4B0DC198 /* Pods-TBURLRequestOptions_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TBURLRequestOptions_Tests-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21E204CD6057DD6659D05FE9947A3F79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53065724AB22CCA43501C8AA17DA37B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B869EF004730C1292DDFF6BE1E777AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B36279F36764E1D54E4B754428042E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				69BE5DF0F0ED7D4270B2A668F61E0BCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		661141B632C945393FAEF47846E05BD5 /* TBURLRequestOptions */ = {
+			isa = PBXGroup;
+			children = (
+				B0B9E56EE79D6E0B8EFA3063F8862076 /* Classes */,
+			);
+			path = TBURLRequestOptions;
+			sourceTree = "<group>";
+		};
+		6E0423F5B506B1217A49BB4100117A7B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F368F07BF9326BDF5ABFDCC01B6C2C53 /* Info.plist */,
+				4D14274378748D2BFC1FB3DA6DEF6CB7 /* TBURLRequestOptions.modulemap */,
+				7BEEE78C132E054A0FD35DA229A5B0C7 /* TBURLRequestOptions.xcconfig */,
+				6159766F6F4EF91B0E763D24A3B01466 /* TBURLRequestOptions-Private.xcconfig */,
+				D691632F80D0725309C3869A62B7547D /* TBURLRequestOptions-dummy.m */,
+				9DA94DCE06E160882B455486797E1E12 /* TBURLRequestOptions-prefix.pch */,
+				78E73F4C43DB85C4F453C0E8F7F917F0 /* TBURLRequestOptions-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TBURLRequestOptions";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				D697EFC5AD19DD0445B185AD43F21905 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				9B686136FDCFFD7BF3A3D0C718A84861 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9B686136FDCFFD7BF3A3D0C718A84861 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEEE011ED4E81AB684B324AD3AE63171 /* Pods-TBURLRequestOptions_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B0B9E56EE79D6E0B8EFA3063F8862076 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				907F40CB1D26FE2D004B4151 /* NSArray+Networking.h */,
+				907F40CC1D26FE2D004B4151 /* NSArray+Networking.m */,
+				907F40CD1D26FE2D004B4151 /* NSData+Networking.h */,
+				907F40CE1D26FE2D004B4151 /* NSData+Networking.m */,
+				907F40CF1D26FE2D004B4151 /* NSDictionary+Networking.h */,
+				907F40D01D26FE2D004B4151 /* NSDictionary+Networking.m */,
+				907F40BF1D26FE20004B4151 /* NSString+Networking.h */,
+				907F40C01D26FE20004B4151 /* NSString+Networking.m */,
+				584FFF70DAF53162853D8F5BD9052A71 /* NSURLRequest+TBAdditions.h */,
+				C04B8586E21BA868B41B5FCC37FD1DD1 /* NSURLRequest+TBAdditions.m */,
+				2BF29A74F663C719E5B4196218EE002F /* TBURLRequestBuilder.h */,
+				AE93CBDF2503DB913E59E1B37334CF12 /* TBURLRequestBuilder.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C9EE2DF0B36850D11B7D8432FE289ED /* Pods_TBURLRequestOptions_Tests.framework */,
+				D769EABA2A32B03BB8B64B9425A86A8F /* TBURLRequestOptions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEEE011ED4E81AB684B324AD3AE63171 /* Pods-TBURLRequestOptions_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				017353B7724F73F98414F5C7CA817907 /* Info.plist */,
+				4FBA85ACD1F2468CF686920A1D6CE946 /* Pods-TBURLRequestOptions_Tests.modulemap */,
+				AB84D22491879B2CD988871831E4DBE5 /* Pods-TBURLRequestOptions_Tests-acknowledgements.markdown */,
+				84BD349D0F3E53D1640DAB0C4FE86780 /* Pods-TBURLRequestOptions_Tests-acknowledgements.plist */,
+				3ABC555A1DA0F40225406BB531DB7634 /* Pods-TBURLRequestOptions_Tests-dummy.m */,
+				F3F36B40636761E7E53D41AE4B0DC198 /* Pods-TBURLRequestOptions_Tests-frameworks.sh */,
+				B415EEEB63F4B0050C5893A74F142913 /* Pods-TBURLRequestOptions_Tests-resources.sh */,
+				6A94F26CF62EEFFE1BE89D54057F42A9 /* Pods-TBURLRequestOptions_Tests-umbrella.h */,
+				DA743E71D28BA0172063D312E5064971 /* Pods-TBURLRequestOptions_Tests.debug.xcconfig */,
+				C579026CA78135D9245E342266CCA74C /* Pods-TBURLRequestOptions_Tests.release.xcconfig */,
+			);
+			name = "Pods-TBURLRequestOptions_Tests";
+			path = "Target Support Files/Pods-TBURLRequestOptions_Tests";
+			sourceTree = "<group>";
+		};
+		D697EFC5AD19DD0445B185AD43F21905 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E085836AC547B9289D1B0E730CFFBB42 /* TBURLRequestOptions */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		E085836AC547B9289D1B0E730CFFBB42 /* TBURLRequestOptions */ = {
+			isa = PBXGroup;
+			children = (
+				6E0423F5B506B1217A49BB4100117A7B /* Support Files */,
+				661141B632C945393FAEF47846E05BD5 /* TBURLRequestOptions */,
+			);
+			name = TBURLRequestOptions;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0CDEC6E0520F663F73492E49DCB724D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A671353C5A228C22617E9A040E63F7 /* NSURLRequest+TBAdditions.h in Headers */,
+				BDEC184F7C3700D4678DCD8500B62BEE /* TBURLRequestOptions-umbrella.h in Headers */,
+				324A45684ED62F6A24182A107C3DB87B /* TBURLRequestBuilder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37C59FE714143DD58EE9EB13EF892FEF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907F40D51D26FE2D004B4151 /* NSData+Networking.h in Headers */,
+				907F40D31D26FE2D004B4151 /* NSArray+Networking.h in Headers */,
+				907F40D71D26FE2D004B4151 /* NSDictionary+Networking.h in Headers */,
+				E032E60676671AD218D64AF46AD2E2BD /* Pods-TBURLRequestOptions_Tests-umbrella.h in Headers */,
+				907F40C91D26FE20004B4151 /* NSString+Networking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4BF14214E04D09ABFBF71A1109DF1CBE /* Pods-TBURLRequestOptions_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A2C95B9B12907D54053EEC49DBB00FE /* Build configuration list for PBXNativeTarget "Pods-TBURLRequestOptions_Tests" */;
+			buildPhases = (
+				AB6564DA0F7C5900F50E60284FC0E524 /* Sources */,
+				21E204CD6057DD6659D05FE9947A3F79 /* Frameworks */,
+				37C59FE714143DD58EE9EB13EF892FEF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FD7A9496E8E3A33A073134416FD25B6 /* PBXTargetDependency */,
+			);
+			name = "Pods-TBURLRequestOptions_Tests";
+			productName = "Pods-TBURLRequestOptions_Tests";
+			productReference = 0C9EE2DF0B36850D11B7D8432FE289ED /* Pods_TBURLRequestOptions_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		96496862A168E0EF2257AC6CA6DCF398 /* TBURLRequestOptions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7B3C1DC99DBBB5439CAADAFC2BC3268 /* Build configuration list for PBXNativeTarget "TBURLRequestOptions" */;
+			buildPhases = (
+				6D2DBBC3AE420FDF97829C2E05ACA83E /* Sources */,
+				5B869EF004730C1292DDFF6BE1E777AF /* Frameworks */,
+				0CDEC6E0520F663F73492E49DCB724D3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TBURLRequestOptions;
+			productName = TBURLRequestOptions;
+			productReference = D769EABA2A32B03BB8B64B9425A86A8F /* TBURLRequestOptions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0730;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BF14214E04D09ABFBF71A1109DF1CBE /* Pods-TBURLRequestOptions_Tests */,
+				96496862A168E0EF2257AC6CA6DCF398 /* TBURLRequestOptions */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D2DBBC3AE420FDF97829C2E05ACA83E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24CB55518CADBDE44803A828FF3470F0 /* NSURLRequest+TBAdditions.m in Sources */,
+				D52A5CA90BF63E50C4FA300CAB95A406 /* TBURLRequestOptions-dummy.m in Sources */,
+				4D0DEB622784B4645B8FFD78C4605FA0 /* TBURLRequestBuilder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB6564DA0F7C5900F50E60284FC0E524 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907F40CA1D26FE20004B4151 /* NSString+Networking.m in Sources */,
+				907F40D41D26FE2D004B4151 /* NSArray+Networking.m in Sources */,
+				907F40D81D26FE2D004B4151 /* NSDictionary+Networking.m in Sources */,
+				C6C0C4F7D057AA1FB0F2C5AD3BC29004 /* Pods-TBURLRequestOptions_Tests-dummy.m in Sources */,
+				907F40D61D26FE2D004B4151 /* NSData+Networking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FD7A9496E8E3A33A073134416FD25B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TBURLRequestOptions;
+			target = 96496862A168E0EF2257AC6CA6DCF398 /* TBURLRequestOptions */;
+			targetProxy = 7E2CD425D536039B4CD5968558DC3F93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A0EF21988750321BABFFE564DC0B0D99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6159766F6F4EF91B0E763D24A3B01466 /* TBURLRequestOptions-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TBURLRequestOptions/TBURLRequestOptions-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TBURLRequestOptions/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TBURLRequestOptions/TBURLRequestOptions.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = TBURLRequestOptions;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BC33B81FB9797EC69CA283747933B0BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C579026CA78135D9245E342266CCA74C /* Pods-TBURLRequestOptions_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TBURLRequestOptions_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-TBURLRequestOptions_Tests/Pods-TBURLRequestOptions_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TBURLRequestOptions_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC631B8FD2E0A7D099370A365E72A9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA743E71D28BA0172063D312E5064971 /* Pods-TBURLRequestOptions_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TBURLRequestOptions_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-TBURLRequestOptions_Tests/Pods-TBURLRequestOptions_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TBURLRequestOptions_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E92A44690F085453B7568B4D1E2F4CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6159766F6F4EF91B0E763D24A3B01466 /* TBURLRequestOptions-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TBURLRequestOptions/TBURLRequestOptions-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TBURLRequestOptions/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TBURLRequestOptions/TBURLRequestOptions.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = TBURLRequestOptions;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
+				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A2C95B9B12907D54053EEC49DBB00FE /* Build configuration list for PBXNativeTarget "Pods-TBURLRequestOptions_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC631B8FD2E0A7D099370A365E72A9CD /* Debug */,
+				BC33B81FB9797EC69CA283747933B0BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7B3C1DC99DBBB5439CAADAFC2BC3268 /* Build configuration list for PBXNativeTarget "TBURLRequestOptions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0EF21988750321BABFFE564DC0B0D99 /* Debug */,
+				E92A44690F085453B7568B4D1E2F4CDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

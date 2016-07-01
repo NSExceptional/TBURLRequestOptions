@@ -1,0 +1,22 @@
+{
+  "name": "TBURLRequestOptions",
+  "version": "0.1.0",
+  "summary": "A short description of TBURLRequestOptions.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/TBURLRequestOptions",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Tanner Bennett": "tannerbennett@me.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/TBURLRequestOptions.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TBURLRequestOptions/Classes/**/*"
+}

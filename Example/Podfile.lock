@@ -1,0 +1,14 @@
+PODS:
+  - TBURLRequestOptions (0.1.0)
+
+DEPENDENCIES:
+  - TBURLRequestOptions (from `../`)
+
+EXTERNAL SOURCES:
+  TBURLRequestOptions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TBURLRequestOptions: dc2bcfa0e3111067e74179040bd35d2f424e218b
+
+COCOAPODS: 0.38.0
