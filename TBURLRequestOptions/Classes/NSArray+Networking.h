@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSArray<NSString*> (Util)
+@interface NSArray (Util)
 /// Joins other strings into a single string with the separator in between each.
 - (NSString *)join:(NSString *)separator;
 @end

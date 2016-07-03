@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-typedef void (^TBResponseBlock)(NSDictionary *json, NSData *data, NSError *error, NSInteger code);
-#define PropertyRequest(type, name) @property (nonatomic, readonly) void (^name)(type)
-
 @interface NSURLRequest (TBAdditions)
 
 /** @brief Replaces header field values. Useful for changing the user-agent on the fly.
@@ -40,13 +37,5 @@ typedef void (^TBResponseBlock)(NSDictionary *json, NSData *data, NSError *error
  @discussion \c overrideValuesForKeys:forEndpoint: and \c overrideHeaderValues:forEndpoint: take precedence over this method.
  This method will replace all ekeys in a request query with the given values in \c endpoints. */
 + (void)overrideEndpoints:(NSDictionary *)endpoints;
-
-PropertyRequest(TBResponseBlock, GET);
-PropertyRequest(TBResponseBlock, POST);
-PropertyRequest(TBResponseBlock, PUT);
-PropertyRequest(TBResponseBlock, HEAD);
-PropertyRequest(TBResponseBlock, DELETE);
-PropertyRequest(TBResponseBlock, OPTIONS);
-PropertyRequest(TBResponseBlock, CONNECT);
 
 @end

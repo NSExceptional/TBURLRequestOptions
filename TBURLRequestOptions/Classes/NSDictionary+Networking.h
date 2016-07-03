@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-#define MergeDictionaries(a, b) [a dictionaryByReplacingValuesForKeys: b
+#define MergeDictionaries(a, b) [a dictionaryByReplacingValuesForKeys: b]
 
 @interface NSDictionary (JSON)
 @property (nonatomic, readonly) NSString *JSONString;

@@ -20,6 +20,8 @@
 		907F40D61D26FE2D004B4151 /* NSData+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F40CE1D26FE2D004B4151 /* NSData+Networking.m */; };
 		907F40D71D26FE2D004B4151 /* NSDictionary+Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 907F40CF1D26FE2D004B4151 /* NSDictionary+Networking.h */; };
 		907F40D81D26FE2D004B4151 /* NSDictionary+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F40D01D26FE2D004B4151 /* NSDictionary+Networking.m */; };
+		B4170A2B1D28AE7900D803C1 /* TBResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B4170A291D28AE7900D803C1 /* TBResponseParser.h */; };
+		B4170A2C1D28AE7900D803C1 /* TBResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B4170A2A1D28AE7900D803C1 /* TBResponseParser.m */; };
 		BDEC184F7C3700D4678DCD8500B62BEE /* TBURLRequestOptions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E73F4C43DB85C4F453C0E8F7F917F0 /* TBURLRequestOptions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3A671353C5A228C22617E9A040E63F7 /* NSURLRequest+TBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 584FFF70DAF53162853D8F5BD9052A71 /* NSURLRequest+TBAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6C0C4F7D057AA1FB0F2C5AD3BC29004 /* Pods-TBURLRequestOptions_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC555A1DA0F40225406BB531DB7634 /* Pods-TBURLRequestOptions_Tests-dummy.m */; };
@@ -63,6 +65,8 @@
 		AB84D22491879B2CD988871831E4DBE5 /* Pods-TBURLRequestOptions_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TBURLRequestOptions_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AE93CBDF2503DB913E59E1B37334CF12 /* TBURLRequestBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TBURLRequestBuilder.m; sourceTree = "<group>"; };
 		B415EEEB63F4B0050C5893A74F142913 /* Pods-TBURLRequestOptions_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TBURLRequestOptions_Tests-resources.sh"; sourceTree = "<group>"; };
+		B4170A291D28AE7900D803C1 /* TBResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBResponseParser.h; sourceTree = "<group>"; };
+		B4170A2A1D28AE7900D803C1 /* TBResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBResponseParser.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C04B8586E21BA868B41B5FCC37FD1DD1 /* NSURLRequest+TBAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+TBAdditions.m"; sourceTree = "<group>"; };
 		C579026CA78135D9245E342266CCA74C /* Pods-TBURLRequestOptions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TBURLRequestOptions_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				C04B8586E21BA868B41B5FCC37FD1DD1 /* NSURLRequest+TBAdditions.m */,
 				2BF29A74F663C719E5B4196218EE002F /* TBURLRequestBuilder.h */,
 				AE93CBDF2503DB913E59E1B37334CF12 /* TBURLRequestBuilder.m */,
+				B4170A291D28AE7900D803C1 /* TBResponseParser.h */,
+				B4170A2A1D28AE7900D803C1 /* TBResponseParser.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				907F40D31D26FE2D004B4151 /* NSArray+Networking.h in Headers */,
 				907F40D71D26FE2D004B4151 /* NSDictionary+Networking.h in Headers */,
 				E032E60676671AD218D64AF46AD2E2BD /* Pods-TBURLRequestOptions_Tests-umbrella.h in Headers */,
+				B4170A2B1D28AE7900D803C1 /* TBResponseParser.h in Headers */,
 				907F40C91D26FE20004B4151 /* NSString+Networking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +332,7 @@
 				907F40D81D26FE2D004B4151 /* NSDictionary+Networking.m in Sources */,
 				C6C0C4F7D057AA1FB0F2C5AD3BC29004 /* Pods-TBURLRequestOptions_Tests-dummy.m in Sources */,
 				907F40D61D26FE2D004B4151 /* NSData+Networking.m in Sources */,
+				B4170A2C1D28AE7900D803C1 /* TBResponseParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

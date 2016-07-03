@@ -45,7 +45,7 @@
     
     size_t bufferSize = self.length + kCCKeySizeAES128;
     void *buffer = malloc(bufferSize);
-
+    
     size_t decryptedLength = 0;
     CCCryptorStatus cryptStatus = CCCrypt(operation,
                                           kCCAlgorithmAES128,
@@ -202,7 +202,7 @@
     NSMutableData *boundary = [NSMutableData data];
     [boundary appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", key, key] dataUsingEncoding:NSUTF8StringEncoding]];
     [boundary appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [boundary appendData:[NSData dataWithData:data]];
+    [boundary appendData:data];
     [boundary appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", SKConsts.boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
     return boundary;
