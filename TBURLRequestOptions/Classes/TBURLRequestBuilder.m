@@ -168,6 +168,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
 
 
 @implementation TBURLRequestProxy
+@synthesize configuration = _configuration;
 
 + (void)initialize {
     if (self == [TBURLRequestProxy class]) {
@@ -184,16 +185,20 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     }
     
     NSURL *url = [NSURL URLWithString:builder->_URL ?: [builder->_baseURL stringByAppendingPathComponent:builder->_endpoint]];
-    self.internalRequest = [NSMutableURLRequest requestWithURL:url];
+    if (_internalRequest) {
+        self.internalRequest.URL = url;
+    } else {
+        self.internalRequest = [NSMutableURLRequest requestWithURL:url];
+    }
     
     self.internalRequest.HTTPBody            = builder.mutlipartBodyData ?: builder->_body;
     self.internalRequest.allHTTPHeaderFields = builder->_headers;
     self.internalRequest.timeoutInterval     = builder->_timeout;
     self.internalRequest.networkServiceType  = builder->_serviceType;
     
-    self.background    = builder->_background;
-    self.configuration = builder->_configuration;
-    self.session       = builder->_session;
+    self.background = builder->_background;
+    _configuration  = builder->_configuration;
+    self.session    = builder->_session;
     
     return self;
 }
