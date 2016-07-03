@@ -1,24 +1,28 @@
 # TBURLRequestOptions
 
-[![CI Status](http://img.shields.io/travis/Tanner Bennett/TBURLRequestOptions.svg?style=flat)](https://travis-ci.org/Tanner Bennett/TBURLRequestOptions)
 [![Version](https://img.shields.io/cocoapods/v/TBURLRequestOptions.svg?style=flat)](http://cocoapods.org/pods/TBURLRequestOptions)
 [![License](https://img.shields.io/cocoapods/l/TBURLRequestOptions.svg?style=flat)](http://cocoapods.org/pods/TBURLRequestOptions)
 [![Platform](https://img.shields.io/cocoapods/p/TBURLRequestOptions.svg?style=flat)](http://cocoapods.org/pods/TBURLRequestOptions)
 
-## Example
+## Examples
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```objc
+```
 
 ## Requirements
+iOS 7.0 or OS X 10.9 or later
 
 ## Installation
 
-TBURLRequestOptions is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### Cocoapods
+Add add the following line to your Podfile:
 
 ```ruby
-pod "TBURLRequestOptions"
+pod 'TBURLRequestOptions'
 ```
+
+### Manually
+Copy all of the .h/.m files in `TBURLRequestOptions/Classes` to your project.
 
 ## Author
 
