@@ -27,9 +27,13 @@
 
 
 @interface NSString (REST)
+@property (nonatomic, readonly) NSString *URLEncodedString;
 + (NSString *)timestamp;
-+ (NSString *)timestampInSeconds;
 + (NSString *)timestampFrom:(NSDate *)date;
++ (NSString *)queryStringWithParams:(NSDictionary *)params;
++ (NSString *)queryStringWithParams:(NSDictionary *)params URLEscapeValues:(BOOL)escapeValues;
+- (NSURL *)URLByAppendingQueryStringWithParams:(NSDictionary *)params;
+
 @end
 
 
@@ -38,9 +42,4 @@
 - (NSString *)matchGroupAtIndex:(NSUInteger)idx forRegex:(NSString *)regex;
 - (NSArray *)allMatchesForRegex:(NSString *)regex;
 - (NSString *)stringByReplacingMatchesForRegex:(NSString *)regex withString:(NSString *)replacement;
-@end
-
-
-@interface NSString (Snapchat)
-+ (NSString *)SCIdentifierWith:(NSString *)first and:(NSString *)second;
 @end

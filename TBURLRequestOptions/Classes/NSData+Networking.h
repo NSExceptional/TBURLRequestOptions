@@ -45,6 +45,6 @@
 
 
 @interface NSData (REST)
-+ (NSData *)boundaryWithKey:(NSString *)key forStringValue:(NSString *)string;
-+ (NSData *)boundaryWithKey:(NSString *)key forDataValue:(NSData *)data;
++ (NSData *)boundary:(NSString *)boundary withKey:(NSString *)key forStringValue:(NSString *)string;
++ (NSData *)boundary:(NSString *)boundary withKey:(NSString *)key forDataValue:(NSData *)data;
 @end

@@ -134,12 +134,12 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     // Raw data
     [_multipartData enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSData *data, BOOL *stop) {
-        [body appendData:[NSData boundaryWithKey:key forDataValue:data]];
+        [body appendData:[NSData boundary:_boundary withKey:key forDataValue:data]];
     }];
     // Form parameters
     if (_multipartStrings) {
         [_multipartStrings enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-            [body appendData:[NSData boundaryWithKey:key forStringValue:obj]];
+            [body appendData:[NSData boundary:_boundary withKey:key forStringValue:obj]];
         }];
     }
     

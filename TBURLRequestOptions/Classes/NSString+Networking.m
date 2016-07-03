@@ -45,36 +45,6 @@
     return data;
 }
 
-+ (NSString *)hashSCString:(NSString *)first and:(NSString *)second {
-    return [NSString hashSC:[first dataUsingEncoding:NSUTF8StringEncoding] and:[second dataUsingEncoding:NSUTF8StringEncoding]];
-}
-
-+ (NSString *)hashSC:(NSData *)a and:(NSData *)b {
-    NSData *secretData = [SKConsts.secret dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSMutableData *firstData  = secretData.mutableCopy;
-    NSMutableData *secondData = b.mutableCopy;
-    
-    // Append secret to values
-    [firstData appendData:a];
-    [secondData appendData:secretData];
-    
-    // SHA256 hash data
-    NSString *first  = [firstData sha256Hash];
-    NSString *second = [secondData sha256Hash];
-    
-    // SC hash
-    NSMutableString *hash = [NSMutableString string];
-    for (int i = 0; i < SKConsts.hashPattern.length; i++) {
-        if ([SKConsts.hashPattern characterAtIndex:i] == '0')
-            [hash appendFormat:@"%C", [first characterAtIndex:i]];
-        else
-            [hash appendFormat:@"%C", [second characterAtIndex:i]];
-    }
-    
-    return hash;
-}
-
 + (NSString *)hashHMacToString:(NSString *)data key:(NSString *)key {
     return [[self hashHMac:data key:key] base64EncodedStringWithOptions:0];
 }
@@ -109,13 +79,33 @@
     return [self timestampFrom:[NSDate date]];
 }
 
-+ (NSString *)timestampInSeconds {
-    return [NSString stringWithFormat:@"%llu", (unsigned long long)[NSDate date].timeIntervalSince1970];
-}
-
 + (NSString *)timestampFrom:(NSDate *)date {
     NSTimeInterval time = date.timeIntervalSince1970;
-    return [NSString stringWithFormat:@"%llu", (unsigned long long)round(time *1000.0)];
+    return [NSString stringWithFormat:@"%llu", (unsigned long long)round(time)];
+}
+
++ (NSString *)queryStringWithParams:(NSDictionary *)params {
+    return [NSString queryStringWithParams:params URLEscapeValues:NO];
+}
+
++ (NSString *)queryStringWithParams:(NSDictionary *)params URLEscapeValues:(BOOL)escapeValues {
+    if (params.allKeys.count == 0) return @"";
+    
+    NSMutableString *q = [NSMutableString string];
+    [params enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop) {
+        if ([value isKindOfClass:[NSString class]]) {
+            if (escapeValues) {
+                value = [value URLEncodedString];
+            } else {
+                value = [value stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+            }
+        }
+        [q appendFormat:@"%@=%@&", key, value];
+    }];
+    
+    [q deleteCharactersInRange:NSMakeRange(q.length-1, 1)];
+    
+    return q;
 }
 
 - (NSString *)URLEncodedString {
@@ -138,6 +128,17 @@
     }
     
     return encoded;
+}
+
+- (NSURL *)URLByAppendingQueryStringWithParams:(NSDictionary *)params {
+    if (!params.allKeys.count) return [NSURL URLWithString:self];
+    
+    NSMutableString *url = self.mutableCopy;
+    if ([self characterAtIndex:self.length-1] == '/')
+        [url deleteCharactersInRange:NSMakeRange(self.length-1, 1)];
+    
+    [url appendFormat:@"?%@", [NSString queryStringWithParams:params]];
+    return [NSURL URLWithString:url];
 }
 
 @end

@@ -14,7 +14,7 @@
 #define TBRunBlock(block) if ( block ) block()
 #define TBRunBlockP(block, ...) if ( block ) block( __VA_ARGS__ )
 #define TBRunBlockOnMain(block) TBDispatchToMain(TBRunBlock(block))
-#define TBRunBlockOnMainP(block, ...) TBDispatchToMain(TBRunBlockP(block, __VA_ARGS__))
+#define TBRunBlockOnMainP(block, ...) TBDispatchToMain(TBRunBlockP(block, __VA_ARGS__);)
 #define NSNSString __unsafe_unretained NSString
 #define NSNSURL __unsafe_unretained NSURL
 #define TB_NAMESPACE(name, vals) extern const struct name vals name
@@ -25,25 +25,25 @@ typedef void (^TBResponseBlock)(TBResponseParser *parser);
 
 #pragma mark - TBResponseParser
 @interface TBResponseParser : NSObject
-+ (void)parseResponseData:(nullable NSData *)data
-                 response:(nullable NSHTTPURLResponse *)response
-                    error:(nullable NSError *)error
-                 callback:(nullable TBResponseBlock)callback;
++ (void)parseResponseData:(NSData *)data
+                 response:(NSHTTPURLResponse *)response
+                    error:(NSError *)error
+                 callback:(TBResponseBlock)callback;
 
 #pragma mark
 
-@property (nonatomic, nullable, readonly) NSHTTPURLResponse *response;
-@property (nonatomic,           readonly) NSData *data;
-@property (nonatomic, nullable, readonly) NSError *error;
-@property (nonatomic, nullable, readonly) NSString *contentType;
+@property (nonatomic, readonly) NSHTTPURLResponse *response;
+@property (nonatomic, readonly) NSData            *data;
+@property (nonatomic, readonly) NSError           *error;
+@property (nonatomic, readonly) NSString          *contentType;
 
 #pragma mark Response data helper accessors
 
-@property (nonatomic, nullable, readonly) NSDictionary *JSON;
-@property (nonatomic, nullable, readonly) NSString *HTML;
-@property (nonatomic, nullable, readonly) NSString *XML;
-@property (nonatomic, nullable, readonly) NSString *javascript;
-@property (nonatomic, nullable, readonly) NSString *text;)\
+@property (nonatomic, readonly) NSDictionary *JSON;
+@property (nonatomic, readonly) NSString     *HTML;
+@property (nonatomic, readonly) NSString     *XML;
+@property (nonatomic, readonly) NSString     *javascript;
+@property (nonatomic, readonly) NSString     *text;
 
 @end
 

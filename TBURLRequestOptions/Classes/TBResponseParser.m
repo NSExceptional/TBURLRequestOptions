@@ -29,11 +29,11 @@
         _error    = error;
         
         NSString *contentType = self.contentType;
-        _hasJSON    = [contentType hasPrefix:TBContentType.JSON];
-        _hasHTML    = [contentType isEqualToString:TBContentType.HTML];
-        _hasXML     = [contentType isEqualToString:TBContentType.XML];
-        _javascript = [contentType isEqualToString:TBContentType.javascript];
-        _hasText    = [contentType hasPrefix:@"text"] || _hasXML || _hasJSON;
+        _hasJSON       = [contentType hasPrefix:TBContentType.JSON];
+        _hasHTML       = [contentType isEqualToString:TBContentType.HTML];
+        _hasXML        = [contentType isEqualToString:TBContentType.XML];
+        _hasJavascript = [contentType isEqualToString:TBContentType.javascript];
+        _hasText       = [contentType hasPrefix:@"text"] || _hasXML || _hasJSON;
         
         if (!error) {
             NSUInteger code = self.response.statusCode;
@@ -69,7 +69,6 @@
 
 + (void)parseResponseData:(NSData *)data response:(NSHTTPURLResponse *)response error:(NSError *)error callback:(TBResponseBlock)callback {
     TBRunBlockOnMainP(callback, [[TBResponseParser alloc] initWithDataData:data response:response error:error]);
-    
 }
 
 + (NSError *)errorWithMessage:(NSString *)message code:(NSInteger)code {

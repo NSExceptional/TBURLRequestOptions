@@ -9,6 +9,7 @@
 #import "NSDictionary+Networking.h"
 #import "NSString+Networking.h"
 #import "NSData+Networking.h"
+#import "NSArray+Networking.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import <CommonCrypto/CommonHMAC.h>
 
@@ -23,13 +24,13 @@
     NSString *header = @"{\"typ\":\"JWT\",\"alg\":\"HS256\"}";
     NSString *payload = [self.JSONString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
     
-    NSString *data = [@"." join:@[header.base64URLEncoded, payload.base64URLEncoded]];
+    NSString *data = [@[header.base64URLEncoded, payload.base64URLEncoded] join:@"."];
     
     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
     CCHmac(kCCHmacAlgSHA256, key.UTF8String, strlen(key.UTF8String), data.UTF8String, strlen(data.UTF8String), cHMAC);
     NSData *signature = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
     
-    return [@"." join:@[data, signature.base64URLEncodedString]];
+    return [@[data, signature.base64URLEncodedString] join:@"."];
 }
 
 @end
