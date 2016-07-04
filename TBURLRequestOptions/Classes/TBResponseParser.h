@@ -114,6 +114,7 @@ extern NSString * TBHTTPStatusCodeDescriptionFromString(NSString *codeString);
 
 TB_NAMESPACE(TBContentType, {
     NSNSString *CSS;
+    NSNSString *formURLEncoded;
     NSNSString *GZIP;
     NSNSString *HTML;
     NSNSString *javascript;

@@ -83,6 +83,7 @@
 
 TB_NAMESPACE_IMP(TBContentType) {
     .CSS                = @"texg/css",
+    .formURLEncoded     = @"application/x-www-form-urlencoded",
     .GZIP               = @"application/gzip",
     .HTML               = @"text/html",
     .javascript         = @"application/javascript",

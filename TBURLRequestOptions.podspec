@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TBURLRequestOptions'
-  s.version          = '1.0.0'
+  s.version          = '0.1.0'
   s.summary          = 'A small, handy library to make HTTP networking easier.'
 
   s.homepage         = 'https://github.com/ThePantsThief/TBURLRequestOptions'
