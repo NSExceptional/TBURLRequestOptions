@@ -56,7 +56,7 @@ static NSMutableDictionary *progressToTasks;
 
 @implementation TBURLRequestBuilder
 
-+ (TBURLRequestProxy *)make:(void (^)(TBURLRequestBuilder *))configurationHandler {
++ (TBURLRequestProxy *)make:(void (^)(TBURLRequestBuilder *make))configurationHandler {
     TBURLRequestBuilder *builder = [self new];
     configurationHandler(builder);
     return [[TBURLRequestProxy new] build:builder];
@@ -88,7 +88,7 @@ BuilderOptionIMP(NSString *, URL, {
 })
 BuilderOptionIMP(NSString *, baseURL, {
     NSAssert(!_URL, @"Cannot use a base URL and a full URL");
-    _baseURL = _URL;
+    _baseURL = baseURL;
 })
 BuilderOptionIMP(NSString *, endpoint, {
     NSAssert(_baseURL, @"Must first use a baseURL");
@@ -109,19 +109,19 @@ BuilderOptionAutoIMP(NSURLSession *, session);
 
 BuilderOptionIMP(NSString *, bodyString, {
     _body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _contentTypeHeader = TBContentType.plainText;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSON, {
-    _body = [bodyJSON.JSONString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _body = [NSJSONSerialization dataWithJSONObject:bodyJSON options:0 error:nil];
+    _contentTypeHeader = TBContentType.JSON;
 })
 BuilderOptionIMP(NSString *, bodyFormString, {
     _body = [bodyFormString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _contentTypeHeader = TBContentType.formURLEncoded;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     _body = [bodyJSONFormString.queryString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _contentTypeHeader = TBContentType.formURLEncoded;
 })
 
 - (NSData *)mutlipartBodyData {

@@ -30,7 +30,9 @@ typedef void (^TBResponseBlock)(TBResponseParser *parser);
                     error:(NSError *)error
                  callback:(TBResponseBlock)callback;
 
-#pragma mark
++ (NSError *)error:(NSString *)message domain:(NSString *)domain code:(NSInteger)code;
+
+#pragma mark Response information
 
 @property (nonatomic, readonly) NSHTTPURLResponse *response;
 @property (nonatomic, readonly) NSData            *data;
@@ -123,6 +125,7 @@ TB_NAMESPACE(TBContentType, {
     NSNSString *markdown;
     NSNSString *multipartFormData;
     NSNSString *multipartEncrypted;
+    NSNSString *plainText;
     NSNSString *rtf;
     NSNSString *textXML;
     NSNSString *XML;

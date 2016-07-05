@@ -17,7 +17,7 @@ typedef void (^BuilderBlock)(NSDictionary *json, NSData *data, NSError *error, N
 
 /// This method takes a block that will configure a given \c TBURLRequestBuilder object.
 /// The resulting builder is used to make a \c TBURLRequestProxy object.
-+ (TBURLRequestProxy *)make:(void(^)(TBURLRequestBuilder *))configurationHandler;
++ (TBURLRequestProxy *)make:(void(^)(TBURLRequestBuilder *make))configurationHandler;
 
 /// The full URL for the request, excluding any query parameters.
 BuilderOption(NSString *, URL);

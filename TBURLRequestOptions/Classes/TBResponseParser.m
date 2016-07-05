@@ -38,7 +38,7 @@
         if (!error) {
             NSUInteger code = self.response.statusCode;
             if (code <= 400) {
-                _error = [[self class] errorWithMessage:TBHTTPStatusCodeDescription(code) code:code];
+                _error = [[self class] error:TBHTTPStatusCodeDescription(code) domain:@"TBResponseParser" code:code];
             }
         }
     }
@@ -71,9 +71,9 @@
     TBRunBlockOnMainP(callback, [[TBResponseParser alloc] initWithDataData:data response:response error:error]);
 }
 
-+ (NSError *)errorWithMessage:(NSString *)message code:(NSInteger)code {
-    return [NSError errorWithDomain:@"SnapchatKit" code:code userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(message, @""),
-                                                                        NSLocalizedFailureReasonErrorKey: NSLocalizedString(message, @"")}];
++ (NSError *)error:(NSString *)message domain:(NSString *)domain code:(NSInteger)code {
+    return [NSError errorWithDomain:domain code:code userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(message, @""),
+                                                                NSLocalizedFailureReasonErrorKey: NSLocalizedString(message, @"")}];
 }
 
 @end
@@ -92,6 +92,7 @@ TB_NAMESPACE_IMP(TBContentType) {
     .markdown           = @"text/markdown",
     .multipartFormData  = @"multipart/form-data",
     .multipartEncrypted = @"mutlipart/encrypted",
+    .plainText          = @"text/plain",
     .rtf                = @"text/rtf",
     .textXML            = @"text/xml",
     .XML                = @"application/xml",
