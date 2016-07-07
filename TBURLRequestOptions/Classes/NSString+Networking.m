@@ -45,25 +45,16 @@
     return data;
 }
 
-+ (NSString *)hashHMac256ToString:(NSString *)data key:(NSString *)key {
-    return [[self hashHMacSHA256:data key:key] base64EncodedStringWithOptions:0];
++ (NSString *)hashHMacToString:(NSString *)data key:(NSString *)key {
+    return [[self hashHMac:data key:key] base64EncodedStringWithOptions:0];
 }
 
-+ (NSData *)hashHMacSHA256:(NSString *)data key:(NSString *)key {
++ (NSData *)hashHMac:(NSString *)data key:(NSString *)key {
     const char *cKey  = [key cStringUsingEncoding:NSUTF8StringEncoding];
     const char *cData = [data cStringUsingEncoding:NSUTF8StringEncoding];
     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
     
     CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
-    return [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
-}
-
-+ (NSData *)hashHMacSHA1:(NSString *)data key:(NSString *)key {
-    const char *cKey  = [key cStringUsingEncoding:NSUTF8StringEncoding];
-    const char *cData = [data cStringUsingEncoding:NSUTF8StringEncoding];
-    unsigned char cHMAC[CC_SHA1_DIGEST_LENGTH];
-    
-    CCHmac(kCCHmacAlgSHA1, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
     return [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
 }
 

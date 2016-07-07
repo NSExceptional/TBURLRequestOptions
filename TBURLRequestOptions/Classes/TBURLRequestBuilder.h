@@ -17,7 +17,7 @@ typedef void (^BuilderBlock)(NSDictionary *json, NSData *data, NSError *error, N
 
 /// This method takes a block that will configure a given \c TBURLRequestBuilder object.
 /// The resulting builder is used to make a \c TBURLRequestProxy object.
-+ (TBURLRequestProxy *)make:(void(^)(TBURLRequestBuilder *make))configurationHandler;
++ (TBURLRequestProxy *)make:(void(^)(TBURLRequestBuilder *))configurationHandler;
 
 /// The full URL for the request, excluding any query parameters.
 BuilderOption(NSString *, URL);
@@ -60,6 +60,9 @@ BuilderOption(NSURLRequestNetworkServiceType, serviceType);
 BuilderOption(NSURLSessionConfiguration *, configuration);
 BuilderOption(NSURLSession *, session);
 
+/// For your own use
+BuilderOption(id, metadata);
+
 @end
 
 
@@ -78,6 +81,7 @@ BuilderOption(NSURLSession *, session);
 @property (nonatomic, readonly) NSURLSessionConfiguration *configuration;
 /// The reciever serves as the session's \c NSURLSessionDataDelegate to update returned \c NSProgress objects.
 @property (nonatomic) NSURLSession                        *session;
+@property (nonatomic) id metadata;
 
 - (NSProgress *)GET:(TBResponseBlock)completion;
 - (NSProgress *)POST:(TBResponseBlock)completion;

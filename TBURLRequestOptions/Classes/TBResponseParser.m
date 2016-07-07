@@ -21,6 +21,10 @@
 @synthesize JSON = _JSON;
 @synthesize text = _text;
 
++ (instancetype)error:(NSError *)error {
+    return [[self alloc] initWithDataData:nil response:nil error:error];
+}
+
 - (id)initWithDataData:(NSData *)data response:(NSHTTPURLResponse *)response error:(NSError *)error {
     self = [super init];
     if (self) {

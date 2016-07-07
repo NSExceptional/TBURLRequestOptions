@@ -25,6 +25,8 @@ typedef void (^TBResponseBlock)(TBResponseParser *parser);
 
 #pragma mark - TBResponseParser
 @interface TBResponseParser : NSObject
+
++ (instancetype)error:(NSError *)error;
 + (void)parseResponseData:(NSData *)data
                  response:(NSHTTPURLResponse *)response
                     error:(NSError *)error

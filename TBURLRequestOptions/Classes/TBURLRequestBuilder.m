@@ -42,6 +42,7 @@ static NSMutableDictionary *progressToTasks;
     NSURLRequestNetworkServiceType _serviceType;
     NSURLSessionConfiguration *_configuration;
     NSURLSession *_session;
+    id _metadata;
 }
 @property (nonatomic, readonly) NSData *mutlipartBodyData;
 @property (nonatomic, readonly) NSString *multipartContentTypeHeader;
@@ -56,7 +57,7 @@ static NSMutableDictionary *progressToTasks;
 
 @implementation TBURLRequestBuilder
 
-+ (TBURLRequestProxy *)make:(void (^)(TBURLRequestBuilder *make))configurationHandler {
++ (TBURLRequestProxy *)make:(void (^)(TBURLRequestBuilder *))configurationHandler {
     TBURLRequestBuilder *builder = [self new];
     configurationHandler(builder);
     return [[TBURLRequestProxy new] build:builder];
@@ -88,7 +89,7 @@ BuilderOptionIMP(NSString *, URL, {
 })
 BuilderOptionIMP(NSString *, baseURL, {
     NSAssert(!_URL, @"Cannot use a base URL and a full URL");
-    _baseURL = baseURL;
+    _baseURL = _URL;
 })
 BuilderOptionIMP(NSString *, endpoint, {
     NSAssert(_baseURL, @"Must first use a baseURL");
@@ -105,23 +106,24 @@ BuilderOptionAutoIMP(NSTimeInterval, timeout)
 BuilderOptionAutoIMP(NSURLRequestNetworkServiceType, serviceType);
 BuilderOptionAutoIMP(NSURLSessionConfiguration *, configuration);
 BuilderOptionAutoIMP(NSURLSession *, session);
+BuilderOptionAutoIMP(id, metadata);
 
 
 BuilderOptionIMP(NSString *, bodyString, {
     _body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = TBContentType.plainText;
+    _contentTypeHeader = nil;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSON, {
-    _body = [NSJSONSerialization dataWithJSONObject:bodyJSON options:0 error:nil];
-    _contentTypeHeader = TBContentType.JSON;
+    _body = [bodyJSON.JSONString dataUsingEncoding:NSUTF8StringEncoding];
+    _contentTypeHeader = nil;
 })
 BuilderOptionIMP(NSString *, bodyFormString, {
     _body = [bodyFormString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = TBContentType.formURLEncoded;
+    _contentTypeHeader = nil;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     _body = [bodyJSONFormString.queryString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = TBContentType.formURLEncoded;
+    _contentTypeHeader = nil;
 })
 
 - (NSData *)mutlipartBodyData {
@@ -200,11 +202,13 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     _configuration  = builder->_configuration;
     self.session    = builder->_session;
     
+    self.metadata = builder->_metadata;
+    
     return self;
 }
 
 - (NSMutableURLRequest *)request { return self.internalRequest.copy; }
-- (NSURLSessionConfiguration *)configuration { return self.session.configuration ?: _configuration ?: defaultURLSessionConfig; }
+- (NSURLSessionConfiguration *)configuration { return _session.configuration ?: _configuration ?: defaultURLSessionConfig; }
 - (NSURLSession *)session {
     if (!_session) {
         _session = [NSURLSession sessionWithConfiguration:self.configuration delegate:self delegateQueue:nil];
