@@ -111,8 +111,7 @@ typedef NS_ENUM(NSUInteger, TBHTTPStatusCode) {
     TBHTTPStatusCodeAuthenticationRequired = 511,
 };
 
-#define TBHTTPStatusCodeDescription(TBHTTPStatusCode) TBHTTPStatusCodeDescriptionFromString(@(#TBHTTPStatusCode))
-extern NSString * TBHTTPStatusCodeDescriptionFromString(NSString *codeString);
+extern NSString * TBHTTPStatusCodeDescriptionFromString(TBHTTPStatusCode code);
 
 #pragma mark String constants
 

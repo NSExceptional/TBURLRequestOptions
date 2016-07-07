@@ -89,7 +89,7 @@ BuilderOptionIMP(NSString *, URL, {
 })
 BuilderOptionIMP(NSString *, baseURL, {
     NSAssert(!_URL, @"Cannot use a base URL and a full URL");
-    _baseURL = _URL;
+    _baseURL = baseURL;
 })
 BuilderOptionIMP(NSString *, endpoint, {
     NSAssert(_baseURL, @"Must first use a baseURL");
@@ -232,6 +232,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     NSURLSessionTask *task = [self.session dataTaskWithRequest:self.internalRequest completionHandler:^(NSData *d, NSURLResponse *r, NSError *e) {
         [TBResponseParser parseResponseData:d response:(id)r error:e callback:completion];
     }];
+    [task resume];
     
     // NSProgress for task 
     if (self.session.delegate == self) {
