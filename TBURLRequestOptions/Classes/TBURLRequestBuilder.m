@@ -159,7 +159,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
         }
     } else if (_multipartData || _multipartStrings) {
         _contentTypeHeader = @"mutlipart/form-data";
-        return _contentTypeHeader;
+        return self.multipartContentTypeHeader;
     }
     
     return nil;
