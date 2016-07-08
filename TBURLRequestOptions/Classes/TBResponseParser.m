@@ -95,7 +95,7 @@ TB_NAMESPACE_IMP(TBContentType) {
     .JWT                = @"application/jwt",
     .markdown           = @"text/markdown",
     .multipartFormData  = @"multipart/form-data",
-    .multipartEncrypted = @"mutlipart/encrypted",
+    .multipartEncrypted = @"multipart/encrypted",
     .plainText          = @"text/plain",
     .rtf                = @"text/rtf",
     .textXML            = @"text/xml",
