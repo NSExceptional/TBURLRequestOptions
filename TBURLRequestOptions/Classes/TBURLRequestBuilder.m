@@ -132,17 +132,19 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     
     NSMutableData *body = [NSMutableData data];
     // Initial boundary
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    // Raw data
-    [_multipartData enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSData *data, BOOL *stop) {
-        [body appendData:[NSData boundary:_boundary withKey:key forDataValue:data]];
-    }];
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
     // Form parameters
     if (_multipartStrings) {
         [_multipartStrings enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
             [body appendData:[NSData boundary:_boundary withKey:key forStringValue:obj]];
         }];
     }
+    
+    // Raw data
+    [_multipartData enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSData *data, BOOL *stop) {
+        [body appendData:[NSData boundary:_boundary withKey:key forDataValue:data]];
+    }];
     
     // Replace last \r\n with --
     [body replaceBytesInRange:NSMakeRange(body.length-2, 2) withBytes:[@"--" dataUsingEncoding:NSUTF8StringEncoding].bytes];
