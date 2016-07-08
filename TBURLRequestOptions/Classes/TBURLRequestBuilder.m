@@ -159,6 +159,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
             _boundary = _boundary ?: [NSUUID UUID].UUIDString;
             return [NSString stringWithFormat:@"%@; boundary=%@", _contentTypeHeader, _boundary];
         }
+        return _contentTypeHeader;
     } else if (_multipartData || _multipartStrings) {
         _contentTypeHeader = TBContentType.multipartFormData;
         return self.multipartContentTypeHeader;
@@ -184,7 +185,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     // Explicit Content-Type
     NSString *contentType = builder.multipartContentTypeHeader ?: builder->_contentTypeHeader;
     if (contentType) {
-        builder->_headers = MergeDictionaries(builder->_headers, @{@"Content-Type": builder->_contentTypeHeader});
+        builder->_headers = MergeDictionaries(builder->_headers, @{@"Content-Type": contentType});
     }
     
     NSString *urlString = builder->_URL ?: [builder->_baseURL stringByAppendingString:builder->_endpoint];
@@ -240,7 +241,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     }];
     [task resume];
     
-    // NSProgress for task 
+    // NSProgress for task
     if (self.session.delegate == self) {
         NSProgress *progress = [NSProgress progressWithTotalUnitCount:100];
         progressToTasks[@(task.taskIdentifier)] = progress;
