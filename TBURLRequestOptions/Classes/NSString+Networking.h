@@ -20,8 +20,9 @@
 @property (nonatomic, readonly) NSString *sha256Hash;
 @property (nonatomic, readonly) NSData   *sha256HashData;
 
-+ (NSData *)hashHMac:(NSString *)data key:(NSString *)key;
-+ (NSString *)hashHMacToString:(NSString *)data key:(NSString *)key;
++ (NSData *)hashHMacSHA256:(NSString *)data key:(NSString *)key;
++ (NSString *)hashHMac256ToString:(NSString *)data key:(NSString *)key;
++ (NSData *)hashHMacSHA1:(NSString *)data key:(NSString *)key;
 
 @end
 

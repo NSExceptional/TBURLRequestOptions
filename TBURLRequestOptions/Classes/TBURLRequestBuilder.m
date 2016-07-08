@@ -111,19 +111,19 @@ BuilderOptionAutoIMP(id, metadata);
 
 BuilderOptionIMP(NSString *, bodyString, {
     _body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _contentTypeHeader = TBContentType.plainText;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSON, {
-    _body = [bodyJSON.JSONString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _body = [NSJSONSerialization dataWithJSONObject:bodyJSON options:0 error:nil];
+    _contentTypeHeader = TBContentType.JSON;
 })
 BuilderOptionIMP(NSString *, bodyFormString, {
     _body = [bodyFormString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _contentTypeHeader = TBContentType.formURLEncoded;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     _body = [bodyJSONFormString.queryString dataUsingEncoding:NSUTF8StringEncoding];
-    _contentTypeHeader = nil;
+    _contentTypeHeader = TBContentType.formURLEncoded;
 })
 
 - (NSData *)mutlipartBodyData {
