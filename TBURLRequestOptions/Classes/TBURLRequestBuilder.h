@@ -10,7 +10,6 @@
 #import "TBResponseParser.h"
 
 @class TBURLRequestProxy;
-typedef void (^BuilderBlock)(NSDictionary *json, NSData *data, NSError *error, NSInteger code);
 #define BuilderOption(type, name) @property (nonatomic, readonly) TBURLRequestBuilder *(^name)(type)
 
 @interface TBURLRequestBuilder : NSObject <NSCopying>
