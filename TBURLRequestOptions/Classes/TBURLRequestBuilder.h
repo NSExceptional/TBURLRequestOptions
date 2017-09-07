@@ -76,11 +76,11 @@ BuilderOption(id, metadata);
 @interface TBURLRequestProxy : NSObject
 
 /// May not have it's \c HTTPMethod set
-@property (nonatomic, readonly) NSMutableURLRequest       *request;
+@property (nonatomic          ) NSMutableURLRequest       *request;
 @property (nonatomic, readonly) NSURLSessionConfiguration *configuration;
 /// The reciever serves as the session's \c NSURLSessionDataDelegate to update returned \c NSProgress objects.
-@property (nonatomic) NSURLSession                        *session;
-@property (nonatomic) id metadata;
+@property (nonatomic          ) NSURLSession              *session;
+@property (nonatomic          ) id metadata;
 
 - (NSProgress *)GET:(TBResponseBlock)completion;
 - (NSProgress *)POST:(TBResponseBlock)completion;
