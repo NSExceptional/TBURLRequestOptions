@@ -121,7 +121,7 @@ BuilderOptionIMP(NSString *, bodyFormString, {
     _contentTypeHeader = TBContentType.formURLEncoded;
 })
 BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
-    _body = [bodyJSONFormString.queryString dataUsingEncoding:NSUTF8StringEncoding];
+    _body = [bodyJSONFormString.tb_queryString dataUsingEncoding:NSUTF8StringEncoding];
     _contentTypeHeader = TBContentType.formURLEncoded;
 })
 
@@ -137,13 +137,13 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     // Form parameters
     if (_multipartStrings) {
         [_multipartStrings enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-            [body appendData:[NSData boundary:_boundary withKey:key forStringValue:obj]];
+            [body appendData:[NSData tb_boundary:_boundary withKey:key forStringValue:obj]];
         }];
     }
     
     // Raw data
     [_multipartData enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSData *data, BOOL *stop) {
-        [body appendData:[NSData boundary:_boundary withKey:key forDataValue:data]];
+        [body appendData:[NSData tb_boundary:_boundary withKey:key forDataValue:data]];
     }];
     
     // Replace last \r\n with --
@@ -190,7 +190,7 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
     
     NSString *urlString = builder->_URL ?: [builder->_baseURL stringByAppendingString:builder->_endpoint];
     if (builder->_queries) {
-        urlString = [NSString stringWithFormat:@"%@?%@", urlString, builder->_queries.queryString];
+        urlString = [NSString stringWithFormat:@"%@?%@", urlString, builder->_queries.tb_queryString];
     }
     
     NSURL *url = [NSURL URLWithString:urlString];

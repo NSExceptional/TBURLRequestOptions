@@ -11,7 +11,7 @@
 
 @implementation NSArray (Util)
 
-- (NSString *)join:(NSString *)separator {
+- (NSString *)tb_join:(NSString *)separator {
     NSMutableString *str = [NSMutableString string];
     for (NSString *part in self) {
         [str appendString:part];
@@ -27,7 +27,7 @@
 
 @implementation NSArray (JSON)
 
-- (NSString *)JSONString {
+- (NSString *)tb_JSONString {
     NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:nil];
     return data ? [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] : @"[]";
 }

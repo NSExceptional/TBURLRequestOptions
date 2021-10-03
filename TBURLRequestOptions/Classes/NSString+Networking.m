@@ -13,28 +13,28 @@
 
 @implementation NSString (Encoding)
 
-- (NSData *)base64DecodedData {
+- (NSData *)tb_base64DecodedData {
     return [[NSData alloc] initWithBase64EncodedString:self options:0];
 }
 
-- (NSString *)base64Encoded {
+- (NSString *)tb_base64Encoded {
     NSData *stringData = [self dataUsingEncoding:NSUTF8StringEncoding];
     return [stringData base64EncodedStringWithOptions:0];
 }
 
-- (NSString *)base64URLEncoded {
-    return [[self dataUsingEncoding:NSUTF8StringEncoding] base64URLEncodedString];
+- (NSString *)tb_base64URLEncoded {
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] tb_base64URLEncodedString];
 }
 
-- (NSString *)base64Decoded {
-    return [[NSString alloc] initWithData:self.base64DecodedData encoding:NSUTF8StringEncoding];
+- (NSString *)tb_base64Decoded {
+    return [[NSString alloc] initWithData:self.tb_base64DecodedData encoding:NSUTF8StringEncoding];
 }
 
-- (NSString *)sha256Hash {
-    return [[self dataUsingEncoding:NSUTF8StringEncoding] sha256Hash];
+- (NSString *)tb_sha256Hash {
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] tb_sha256Hash];
 }
 
-- (NSData *)sha256HashData {
+- (NSData *)tb_sha256HashData {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     
     unsigned char result[CC_SHA256_DIGEST_LENGTH];
@@ -45,11 +45,11 @@
     return data;
 }
 
-+ (NSString *)hashHMac256ToString:(NSString *)data key:(NSString *)key {
-    return [[self hashHMacSHA256:data key:key] base64EncodedStringWithOptions:0];
++ (NSString *)tb_hashHMac256ToString:(NSString *)data key:(NSString *)key {
+    return [[self tb_hashHMacSHA256:data key:key] base64EncodedStringWithOptions:0];
 }
 
-+ (NSData *)hashHMacSHA256:(NSString *)data key:(NSString *)key {
++ (NSData *)tb_hashHMacSHA256:(NSString *)data key:(NSString *)key {
     const char *cKey  = [key cStringUsingEncoding:NSUTF8StringEncoding];
     const char *cData = [data cStringUsingEncoding:NSUTF8StringEncoding];
     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
@@ -58,7 +58,7 @@
     return [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
 }
 
-+ (NSData *)hashHMacSHA1:(NSString *)data key:(NSString *)key {
++ (NSData *)tb_hashHMacSHA1:(NSString *)data key:(NSString *)key {
     const char *cKey  = [key cStringUsingEncoding:NSUTF8StringEncoding];
     const char *cData = [data cStringUsingEncoding:NSUTF8StringEncoding];
     unsigned char cHMAC[CC_SHA1_DIGEST_LENGTH];
@@ -67,7 +67,7 @@
     return [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
 }
 
-- (NSString *)MD5Hash {
+- (NSString *)tb_MD5Hash {
     const char *cStr = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5( cStr, (CC_LONG)strlen(cStr), result );
@@ -84,27 +84,27 @@
 
 @implementation NSString (REST)
 
-+ (NSString *)timestamp {
-    return [self timestampFrom:[NSDate date]];
++ (NSString *)tb_timestamp {
+    return [self tb_timestampFrom:[NSDate date]];
 }
 
-+ (NSString *)timestampFrom:(NSDate *)date {
++ (NSString *)tb_timestampFrom:(NSDate *)date {
     NSTimeInterval time = date.timeIntervalSince1970;
     return [NSString stringWithFormat:@"%llu", (unsigned long long)round(time)];
 }
 
-+ (NSString *)queryStringWithParams:(NSDictionary *)params {
-    return [NSString queryStringWithParams:params URLEscapeValues:NO];
++ (NSString *)tb_queryStringWithParams:(NSDictionary *)params {
+    return [NSString tb_queryStringWithParams:params URLEscapeValues:NO];
 }
 
-+ (NSString *)queryStringWithParams:(NSDictionary *)params URLEscapeValues:(BOOL)escapeValues {
++ (NSString *)tb_queryStringWithParams:(NSDictionary *)params URLEscapeValues:(BOOL)escapeValues {
     if (params.allKeys.count == 0) return @"";
     
     NSMutableString *q = [NSMutableString string];
     [params enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop) {
         if ([value isKindOfClass:[NSString class]]) {
             if (escapeValues) {
-                value = [value URLEncodedString];
+                value = [value tb_URLEncodedString];
             } else {
                 value = [value stringByReplacingOccurrencesOfString:@" " withString:@"+"];
             }
@@ -117,7 +117,7 @@
     return q;
 }
 
-- (NSString *)URLEncodedString {
+- (NSString *)tb_URLEncodedString {
     NSMutableString *encoded    = [NSMutableString string];
     const unsigned char *source = (const unsigned char *)self.UTF8String;
     NSInteger sourceLen         = (NSInteger)strlen((const char *)source);
@@ -139,14 +139,14 @@
     return encoded;
 }
 
-- (NSURL *)URLByAppendingQueryStringWithParams:(NSDictionary *)params {
+- (NSURL *)tb_URLByAppendingQueryStringWithParams:(NSDictionary *)params {
     if (!params.allKeys.count) return [NSURL URLWithString:self];
     
     NSMutableString *url = self.mutableCopy;
     if ([self characterAtIndex:self.length-1] == '/')
         [url deleteCharactersInRange:NSMakeRange(self.length-1, 1)];
     
-    [url appendFormat:@"?%@", [NSString queryStringWithParams:params]];
+    [url appendFormat:@"?%@", [NSString tb_queryStringWithParams:params]];
     return [NSURL URLWithString:url];
 }
 
@@ -155,8 +155,8 @@
 
 @implementation NSString (Regex)
 
-- (NSString *)matchGroupAtIndex:(NSUInteger)idx forRegex:(NSString *)regex {
-    NSArray *matches = [self matchesForRegex:regex];
+- (NSString *)tb_matchGroupAtIndex:(NSUInteger)idx forRegex:(NSString *)regex {
+    NSArray *matches = [self tb_matchesForRegex:regex];
     if (matches.count == 0) return nil;
     NSTextCheckingResult *match = matches[0];
     if (idx >= match.numberOfRanges) return nil;
@@ -164,7 +164,7 @@
     return [self substringWithRange:[match rangeAtIndex:idx]];
 }
 
-- (NSArray *)matchesForRegex:(NSString *)pattern {
+- (NSArray *)tb_matchesForRegex:(NSString *)pattern {
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
     if (error)
@@ -176,8 +176,8 @@
     return matches;
 }
 
-- (NSArray *)allMatchesForRegex:(NSString *)regex {
-    NSArray *matches = [self matchesForRegex:regex];
+- (NSArray *)tb_allMatchesForRegex:(NSString *)regex {
+    NSArray *matches = [self tb_matchesForRegex:regex];
     if (matches.count == 0) return @[];
     
     NSMutableArray *strings = [NSMutableArray new];
@@ -187,11 +187,11 @@
     return strings;
 }
 
-- (NSString *)textFromHTML {
+- (NSString *)tb_textFromHTML {
     if (!self.length)
         return @"";
     
-    NSArray *strings = [self allMatchesForRegex:@"<title>(.*)<[^>]*>"];
+    NSArray *strings = [self tb_allMatchesForRegex:@"<title>(.*)<[^>]*>"];
     NSMutableString *text = [NSMutableString string];
     
     for (NSString *s in strings)
@@ -202,7 +202,7 @@
     return text;
 }
 
-- (NSString *)stringByReplacingMatchesForRegex:(NSString *)pattern withString:(NSString *)replacement {
+- (NSString *)tb_stringByReplacingMatchesForRegex:(NSString *)pattern withString:(NSString *)replacement {
     return [self stringByReplacingOccurrencesOfString:pattern withString:replacement options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
 }
 

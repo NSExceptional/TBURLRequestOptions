@@ -15,22 +15,22 @@
 
 @implementation NSDictionary (JSON)
 
-- (NSString *)JSONString {
+- (NSString *)tb_JSONString {
     NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:nil];
     return data ? [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] : @"{}";
 }
 
-- (NSString *)JWTStringWithSecret:(NSString *)key {
+- (NSString *)tb_JWTStringWithSecret:(NSString *)key {
     NSString *header = @"{\"typ\":\"JWT\",\"alg\":\"HS256\"}";
-    NSString *payload = [self.JSONString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
+    NSString *payload = [self.tb_JSONString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
     
-    NSString *data = [@[header.base64URLEncoded, payload.base64URLEncoded] join:@"."];
+    NSString *data = [@[header.tb_base64URLEncoded, payload.tb_base64URLEncoded] tb_join:@"."];
     
     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
     CCHmac(kCCHmacAlgSHA256, key.UTF8String, strlen(key.UTF8String), data.UTF8String, strlen(data.UTF8String), cHMAC);
     NSData *signature = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
     
-    return [@[data, signature.base64URLEncodedString] join:@"."];
+    return [@[data, signature.tb_base64URLEncodedString] tb_join:@"."];
 }
 
 @end
@@ -38,15 +38,15 @@
 
 @implementation NSDictionary (REST)
 
-- (NSString *)queryString {
-    return [self queryStringURLEscapeValues:NO];
+- (NSString *)tb_queryString {
+    return [self tb_queryStringURLEscapeValues:NO];
 }
 
-- (NSString *)URLEscapedQueryString {
-    return [self queryStringURLEscapeValues:YES];
+- (NSString *)tb_URLEscapedQueryString {
+    return [self tb_queryStringURLEscapeValues:YES];
 }
 
-- (NSString *)queryStringURLEscapeValues:(BOOL)escapeValues {
+- (NSString *)tb_queryStringURLEscapeValues:(BOOL)escapeValues {
     if (self.allKeys.count == 0) return @"";
     
     NSMutableString *q = [NSMutableString string];
@@ -54,7 +54,7 @@
         if ([value isKindOfClass:[NSString class]]) {
             if (value.length) {
                 if (escapeValues) {
-                    value = [value URLEncodedString];
+                    value = [value tb_URLEncodedString];
                 } else {
                     value = [value stringByReplacingOccurrencesOfString:@" " withString:@"+"];
                 }
@@ -77,7 +77,7 @@
 
 @implementation NSDictionary (Util)
 
-- (NSArray *)split:(NSUInteger)entryLimit {
+- (NSArray *)tb_split:(NSUInteger)entryLimit {
     NSParameterAssert(entryLimit > 0);
     if (self.allKeys.count <= entryLimit)
         return @[self];
@@ -95,7 +95,7 @@
     return dicts;
 }
 
-- (NSDictionary *)dictionaryByReplacingValuesForKeys:(NSDictionary *)dictionary {
+- (NSDictionary *)tb_dictionaryByReplacingValuesForKeys:(NSDictionary *)dictionary {
     if (!dictionary || !dictionary.allKeys.count || !self) return self;
     
     NSMutableDictionary *m = self.mutableCopy;
@@ -103,7 +103,7 @@
     return m.copy;
 }
 
-- (NSDictionary *)dictionaryByReplacingKeysWithNewKeys:(NSDictionary *)oldKeysToNewKeys {
+- (NSDictionary *)tb_dictionaryByReplacingKeysWithNewKeys:(NSDictionary *)oldKeysToNewKeys {
     if (!oldKeysToNewKeys || !oldKeysToNewKeys.allKeys.count || !self) return self;
     
     NSMutableDictionary *m = self.mutableCopy;
@@ -116,14 +116,14 @@
     return m;
 }
 
-- (NSArray *)allKeyPaths {
+- (NSArray *)tb_allKeyPaths {
     NSMutableArray *keyPaths = [NSMutableArray array];
     
     [self enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
         [keyPaths addObject:key];
         
         if ([obj isKindOfClass:[NSDictionary class]]) {
-            for (NSString *kp in [obj allKeyPaths])
+            for (NSString *kp in [obj tb_allKeyPaths])
                 [keyPaths addObject:[NSString stringWithFormat:@"%@.%@", key, kp]];
         }
     }];

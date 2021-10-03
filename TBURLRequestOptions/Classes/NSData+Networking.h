@@ -11,47 +11,47 @@
 
 @interface NSData (AES)
 
-- (NSData *)AES128EncryptedDataWithKey:(NSString *)key;
-- (NSData *)AES128DecryptedDataWithKey:(NSString *)key;
-- (NSData *)AES128EncryptedDataWithKey:(NSString *)key iv:(NSString *)iv;
-- (NSData *)AES128DecryptedDataWithKey:(NSString *)key iv:(NSString *)iv;
-- (NSData *)AES128DecryptedDataWithKeyData:(NSData *)key ivData:(NSData *)iv;
+- (NSData *)tb_AES128EncryptedDataWithKey:(NSString *)key;
+- (NSData *)tb_AES128DecryptedDataWithKey:(NSString *)key;
+- (NSData *)tb_AES128EncryptedDataWithKey:(NSString *)key iv:(NSString *)iv;
+- (NSData *)tb_AES128DecryptedDataWithKey:(NSString *)key iv:(NSString *)iv;
+- (NSData *)tb_AES128DecryptedDataWithKeyData:(NSData *)key ivData:(NSData *)iv;
 
 /** Pads data using PKCS5. blockSize defaults to 16 if given 0. */
-- (NSData *)pad:(NSUInteger)blockSize;
+- (NSData *)tb_pad:(NSUInteger)blockSize;
 
 @end
 
 
 @interface NSData (FileFormat)
 
-@property (nonatomic, readonly) BOOL isJPEG;
-@property (nonatomic, readonly) BOOL isPNG;
-@property (nonatomic, readonly) BOOL isGIF;
-@property (nonatomic, readonly) BOOL isImage; // All 3
-@property (nonatomic, readonly) BOOL isStillImage; // Not include GIF
-@property (nonatomic, readonly) BOOL isMPEG4;
-@property (nonatomic, readonly) BOOL isMedia; // All of the above and only the above
+@property (nonatomic, readonly) BOOL tb_isJPEG;
+@property (nonatomic, readonly) BOOL tb_isPNG;
+@property (nonatomic, readonly) BOOL tb_isGIF;
+@property (nonatomic, readonly) BOOL tb_isImage; // All 3
+@property (nonatomic, readonly) BOOL tb_isStillImage; // Not include GIF
+@property (nonatomic, readonly) BOOL tb_isMPEG4;
+@property (nonatomic, readonly) BOOL tb_isMedia; // All of the above and only the above
 /// Checks for PK ZIP, GZIP, GZ, TGZ, TAR.Z, 7z, and bzip2
-@property (nonatomic, readonly) BOOL isCompressed;
-@property (nonatomic, readonly) NSString *appropriateFileExtension;
+@property (nonatomic, readonly) BOOL tb_isCompressed;
+@property (nonatomic, readonly) NSString *tb_appropriateFileExtension;
 /// Supports some of the compression types
-@property (nonatomic, readonly) NSString *contentType;
+@property (nonatomic, readonly) NSString *tb_contentType;
 
 @end
 
 
 @interface NSData (Encoding)
 
-@property (nonatomic, readonly) NSString *base64URLEncodedString;
-@property (nonatomic, readonly) NSString *MD5Hash;
-@property (nonatomic, readonly) NSString *hexadecimalString;
-@property (nonatomic, readonly) NSString *sha256Hash;
+@property (nonatomic, readonly) NSString *tb_base64URLEncodedString;
+@property (nonatomic, readonly) NSString *tb_MD5Hash;
+@property (nonatomic, readonly) NSString *tb_hexadecimalString;
+@property (nonatomic, readonly) NSString *tb_sha256Hash;
 
 @end
 
 
 @interface NSData (REST)
-+ (NSData *)boundary:(NSString *)boundary withKey:(NSString *)key forStringValue:(NSString *)string;
-+ (NSData *)boundary:(NSString *)boundary withKey:(NSString *)key forDataValue:(NSData *)data;
++ (NSData *)tb_boundary:(NSString *)boundary withKey:(NSString *)key forStringValue:(NSString *)string;
++ (NSData *)tb_boundary:(NSString *)boundary withKey:(NSString *)key forDataValue:(NSData *)data;
 @end

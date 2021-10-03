@@ -91,3 +91,5 @@ BuilderOption(id, metadata);
 - (NSProgress *)CONNECT:(TBResponseBlock)completion;
 
 @end
+
+#undef BuilderOption
