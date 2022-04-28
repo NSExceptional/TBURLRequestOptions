@@ -14,7 +14,8 @@ let package = Package(
         .target(
             name: "TBURLRequestOptions",
             dependencies: [],
-            path: "TBURLRequestOptions/Classes"
+            path: "TBURLRequestOptions/Classes",
+            publicHeadersPath: "TBURLRequestOptions/Classes"
         )
     ]
 )
