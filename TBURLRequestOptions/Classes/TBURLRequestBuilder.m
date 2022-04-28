@@ -279,9 +279,9 @@ BuilderOptionIMP(NSDictionary *, bodyJSONFormString, {
 /// Progress is complete when all bytes have been sent and recieved. Sent and recieved are 50% respectively.
 - (void)updateProgressForTask:(NSURLSessionTask *)task {
     NSProgress *progress    = progressToTasks[@(task.taskIdentifier)];
-    CGFloat percentRecieved = task.countOfBytesReceived/task.countOfBytesExpectedToReceive;
-    CGFloat percentSent     = task.countOfBytesSent/task.countOfBytesExpectedToSend;
-    progress.completedUnitCount = 50 * (percentSent + percentRecieved);
+    double percentRecieved = (double)task.countOfBytesReceived/(double)task.countOfBytesExpectedToReceive;
+    double percentSent     = (double)task.countOfBytesSent/(double)task.countOfBytesExpectedToSend;
+    progress.completedUnitCount = (int64_t)(50 * (percentSent + percentRecieved));
 }
 
 @end
