@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tanner Bennett' => 'tannerbennett@me.com' }
   s.source           = { :git => 'https://github.com/NSExceptional/TBURLRequestOptions.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/NSExceptional'
 
   s.requires_arc = true
   s.ios.deployment_target = '7.0'
